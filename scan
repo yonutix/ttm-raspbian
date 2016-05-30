@@ -1,0 +1,13 @@
+ #!/usr/bin/bash
+
+if [[ -z "$1" ]]
+    then
+        echo "Usage: scan string_to_find [file_to_search_in_or_regex_pattern]"
+        exit
+fi
+if [[ -z "$2" ]]
+    then
+        find . -name "*" -print | xargs grep -n --colour=auto "$1"
+        exit
+fi
+find . -name "$2" -print | xargs grep -n --colour=auto "$1"
