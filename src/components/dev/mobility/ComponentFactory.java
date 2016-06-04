@@ -1,6 +1,9 @@
 package components.dev.mobility;
 
 import Logging.Log;
+import components.dev.sensors.ForceSensorComponent;
+import components.dev.sensors.HC_SR04Component;
+import components.dev.sensors.MMA8452QComponent;
 import core.agent.AgentComponent;
 import core.agent.mobility.MobilityComponent;
 import core.agent.parametric.ParametricComponent;
@@ -22,6 +25,11 @@ public class ComponentFactory {
     public static final String WEBSOCKET_COMPONENT = "websocket.WebSocketMessagingComponent";
     public static final String STATE_AGENT_COMPONENT = "StateAgentTestComponent";
     public static final String CONTROL_COMPONENT = "tatami.core.agentcontrol.ControlComponent";
+    public static final String HCSR04 = "components.dev.sensors.HC_SR04Component";
+    public static final String MMA8452Q = "components.dev.sensors.MMA8452QComponent";
+    public static final String FORCE_SENSOR = "components.dev.sensors.ForceSensorComponent";
+    
+
 
     public static final String PLATFORM_WEBSOCKET_MESSAGING = "websocket";
 
@@ -63,6 +71,21 @@ public class ComponentFactory {
         if(className.compareTo(CONTROL_COMPONENT) == 0){
             Log.v("smth", "Parametric component");
             return new ControlComponent();
+        }
+        
+        if(className.compareTo(HCSR04) == 0){
+            Log.v("smth", "Parametric component");
+            return new HC_SR04Component();
+        }
+        
+        if(className.compareTo(MMA8452Q) == 0){
+            Log.v("smth", "Parametric component");
+            return new MMA8452QComponent();
+        }
+        
+        if(className.compareTo(FORCE_SENSOR) == 0){
+            Log.v("smth", "Parametric component");
+            return new ForceSensorComponent();
         }
 
         Log.e("smth", "Error loading component " + className);

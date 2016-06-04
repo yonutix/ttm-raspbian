@@ -100,11 +100,13 @@ public class CompositeAgentLoader implements AgentLoader
 			if(componentClass == null)
 			{
 				AgentComponent.AgentComponentName component = AgentComponent.AgentComponentName.toComponentName(componentName);
+				Log.v("smth", "=========********** " + component);
 				if(component != null)
 				{
 					if(platformLoader != null)
 					{
 						String recommendedClass = platformLoader.getRecommendedComponentClass(component);
+						Log.v("smth", "$$$$$$$$$$" + recommendedClass);
 						if(recommendedClass != null)
 							componentClass = recommendedClass;
 					}

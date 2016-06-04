@@ -13,7 +13,7 @@
 <scen:scenario xmlns:scen="http://www.example.org/scenarioSchema3"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-	<scen:config mainHost="server" mainPort="9008"
+	<scen:config mainHost="server client" mainPort="9008"
 		localHost="127.0.0.1" localPort="9008" />
 
 	<scen:platform>
@@ -27,6 +27,8 @@
 				<scen:component name="control" />
 				<scen:component name="mobility" />
 				<scen:component name="messaging" />
+				<scen:component name="HC_SR04" />
+				<scen:component name="MMA8452Q" />
 				<scen:component name="testing"
 					classpath="StateAgentTestComponent">
 					<scen:parameter name="other agent" value="AgentB" />

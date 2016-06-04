@@ -31,6 +31,9 @@ import org.java_websocket.drafts.Draft_17;
 
 import Logging.Log;
 import XML.XMLTree;
+import components.dev.sensors.ForceSensorComponent;
+import components.dev.sensors.HC_SR04Component;
+import components.dev.sensors.MMA8452QComponent;
 import core.agent.AgentComponent;
 import core.agent.AgentEvent;
 import core.agent.CompositeAgent;
@@ -353,6 +356,12 @@ public class WebSocketMessagingPlatform implements PlatformLoader, PlatformLoade
 		{
 			case MESSAGING_COMPONENT:
 				return WebSocketMessagingComponent.class.getName();
+			case HC_SR04_COMPONENT:
+				return HC_SR04Component.class.getName();
+			case MMA8452Q_COMPONENT:
+				return MMA8452QComponent.class.getName();
+			case FORCESENSOR_COMPONENT:
+				return ForceSensorComponent.class.getName();
 			default:
 				break;
 		}

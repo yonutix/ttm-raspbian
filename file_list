@@ -1,5 +1,8 @@
 src/components/dev/mobility/StateAgentTestComponent.java
 src/components/dev/mobility/ComponentFactory.java
+src/components/dev/sensors/ForceSensorComponent.java
+src/components/dev/sensors/HC_SR04Component.java
+src/components/dev/sensors/MMA8452QComponent.java
 src/core/util/ParameterSet.java
 src/core/util/RegisteredParameterSet.java
 src/core/util/ContentHolder.java

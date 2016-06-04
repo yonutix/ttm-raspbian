@@ -168,6 +168,12 @@ public abstract class AgentComponent implements Serializable
 		 */
 		TESTING_COMPONENT,
 		
+		HC_SR04_COMPONENT,
+		
+		MMA8452Q_COMPONENT,
+		
+		FORCESENSOR_COMPONENT,
+		
 		;
 		
 		/**
