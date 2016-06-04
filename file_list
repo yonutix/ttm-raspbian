@@ -25,10 +25,16 @@ src/core/simulation/AgentManager.java
 src/core/simulation/Boot.java
 src/core/simulation/SimulationManager.java
 src/core/simulation/DefaultPlatform.java
+src/core/simulation/external_interface/ExternalInterface.java
+src/core/simulation/external_interface/ExtAgentInfo.java
+src/core/simulation/external_interface/ExternalInterfaceListener.java
 src/core/simulation/BootSettingsManager.java
 src/core/simulation/PlatformLoader.java
 src/core/simulation/LocalDeploymentPlatform.java
+src/core/simulation/RaspbianWrapperMain.java
 src/Logging/Log.java
+src/rmi_interface/AgentEntryInfo.java
+src/rmi_interface/RMIInterface.java
 src/org/java_websocket/framing/FrameBuilder.java
 src/org/java_websocket/framing/Framedata.java
 src/org/java_websocket/framing/CloseFrameBuilder.java
@@ -76,6 +82,9 @@ src/org/apache/xerces/util/XMLChar.java
 src/org/apache/xerces/impl/dv/util/Base64.java
 src/org/apache/xerces/impl/dv/util/HexBin.java
 src/Main.java
+src/HMIBackend/backend/Backend.java
+src/HMIBackend/backend/AgentLogBackend.java
+src/HMIBackend/backend/LogHub.java
 src/XML/XMLParser.java
 src/XML/package-info.java
 src/XML/XMLTree.java

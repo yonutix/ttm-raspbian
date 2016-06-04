@@ -1,0 +1,6 @@
+rm -r bin
+mkdir bin
+find src -iname *.java > file_list
+for p in $(ls lib); do cp="$cp:lib/$p"; done
+javac -d bin -cp "$cp" @file_list
+

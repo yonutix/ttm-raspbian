@@ -535,7 +535,6 @@ public class Boot
      */
     public static void main(String[] args)
     {
-        //Logging.getMasterLogging().setLogLevel(LoggerSimple.Level.ALL);
         new Boot().boot(args);
     }
 }
