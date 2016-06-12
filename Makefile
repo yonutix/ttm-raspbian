@@ -4,7 +4,7 @@ run-core:
 	java -cp "bin:lib/Config.jar" core.simulation.Boot
 
 run-raspbian:
-	java -cp "bin:lib/Config.jar" core.simulation.RaspbianWrapperMain
+	sudo java -cp "bin:lib/Config.jar:lib/pi4j-core.jar" core.simulation.RaspbianWrapperMain
 
 clean:
 	rm -r bin

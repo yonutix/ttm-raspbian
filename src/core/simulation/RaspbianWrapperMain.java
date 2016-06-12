@@ -61,7 +61,10 @@ public class RaspbianWrapperMain implements RMIInterface{
 		fwkInstance.getSimulationManager().ext().startAgents();
 		
 	}
-	
-	
 
+	@Override
+	public void stop() throws RemoteException {
+		fwkInstance.getSimulationManager().ext().stop();
+		
+	}
 }

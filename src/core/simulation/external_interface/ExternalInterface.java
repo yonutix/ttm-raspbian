@@ -37,6 +37,10 @@ public class ExternalInterface {
     public void unregisterListener(String name){
         allListeners.remove(name);
     }
+    
+    public void stop(){
+    	mContext.stop();
+    }
 
     public void createAgents(){
         mContext.createAgent();

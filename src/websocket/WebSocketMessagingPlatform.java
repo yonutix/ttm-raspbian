@@ -29,8 +29,11 @@ import org.java_websocket.WebSocketImpl;
 import org.java_websocket.drafts.Draft;
 import org.java_websocket.drafts.Draft_17;
 
+import com.pi4j.component.motor.Motor;
+
 import Logging.Log;
 import XML.XMLTree;
+import components.dev.actuators.MotorComponent;
 import components.dev.sensors.ForceSensorComponent;
 import components.dev.sensors.HC_SR04Component;
 import components.dev.sensors.MMA8452QComponent;
@@ -362,6 +365,8 @@ public class WebSocketMessagingPlatform implements PlatformLoader, PlatformLoade
 				return MMA8452QComponent.class.getName();
 			case FORCESENSOR_COMPONENT:
 				return ForceSensorComponent.class.getName();
+			case MOTOR_COMPONENT:
+				return MotorComponent.class.getName();
 			default:
 				break;
 		}

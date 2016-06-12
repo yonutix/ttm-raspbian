@@ -1,3 +1,5 @@
+src/components/dev/actuators/MotorComponent.java
+src/components/dev/actuators/ElectricMotorComponent.java
 src/components/dev/mobility/StateAgentTestComponent.java
 src/components/dev/mobility/ComponentFactory.java
 src/components/dev/sensors/ForceSensorComponent.java

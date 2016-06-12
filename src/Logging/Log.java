@@ -18,7 +18,7 @@ public class Log {
 	}
 	
 	public static void v(String tag, String message){
-		System.out.println(tag +"    " + message);
+		System.out.println(System.currentTimeMillis() + " "  + tag +"    " + message);
 	}
 	public static void i(String tag, String message){
 		System.out.println(tag +"    " + message);

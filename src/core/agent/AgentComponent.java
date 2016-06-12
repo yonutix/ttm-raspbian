@@ -174,6 +174,8 @@ public abstract class AgentComponent implements Serializable
 		
 		FORCESENSOR_COMPONENT,
 		
+		MOTOR_COMPONENT,
+		
 		;
 		
 		/**

@@ -22,6 +22,7 @@ public class Main {
 		    	System.out.println("-names   Lists all runnging agents names");
 		    	System.out.println("-create  Create all the agents from the XML configuration");
 		    	System.out.println("-start   Starts all the agents");
+		    	System.out.println("-exit    Exits the system");
 		    }
 		    
 		    if(args[0].compareTo("-names") == 0){
@@ -37,6 +38,10 @@ public class Main {
 		    
 		    if(args[0].compareTo("-start") == 0){
 		    	stub.startAgents();
+		    }
+		    
+		    if(args[0].compareTo("-exit") == 0){
+		    	stub.stop();
 		    }
 		    
 		} catch (Exception e) {
