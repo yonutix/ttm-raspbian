@@ -1,5 +1,7 @@
 package components.dev.actuators;
 
+import java.util.Random;
+
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
 import com.pi4j.io.gpio.GpioPinDigitalOutput;
@@ -12,6 +14,18 @@ import core.agent.AgentEvent;
 import core.agent.CompositeAgent;
 
 public class MotorComponent extends AgentComponent{
+	
+	enum Direction{
+		LEFT, 
+		RIGHT,
+		FORWARD,
+		BACKWARD,
+		STAY
+	}
+	
+	Random r = new Random();
+	
+	Direction currentDirection =  Direction.STAY;
 
 	/**
 	 * 
@@ -20,19 +34,25 @@ public class MotorComponent extends AgentComponent{
 
 	String thisAgent = null;
 
-	final GpioController gpio;
+	GpioController gpio;
 
 	// provision gpio pin #01 as an output pin and turn on
 	GpioPinDigitalOutput Motor1A;
 	GpioPinDigitalOutput Motor1B;
+	
+	GpioPinDigitalOutput Motor2A;
+	GpioPinDigitalOutput Motor2B;
 
 	public MotorComponent() {
 		super(AgentComponentName.MOTOR_COMPONENT);
 		
 		gpio = GpioFactory.getInstance();
 		
-		Motor1A = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05, PinState.LOW);
-		Motor1B = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06, PinState.LOW);
+		Motor1A = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_22, PinState.LOW);
+		Motor1B = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_23, PinState.LOW);
+		
+		Motor2A = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_24, PinState.LOW);
+		Motor2B = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_25, PinState.LOW);
 		
 		
 		
@@ -75,21 +95,64 @@ public class MotorComponent extends AgentComponent{
 		}
 	}
 	
+	void test(){
+		long ti = System.currentTimeMillis();
+		
+		while((System.currentTimeMillis() - ti) < 10000){
+			int rand = r.nextInt()%5;
+			if(rand == 0){
+				pulseForward();
+			}
+			if(rand == 1){
+				pulseBackward();
+			}
+			if(rand == 2){
+				pulseLeft();
+			}
+			if(rand == 3){
+				pulseRight();
+			}
+			if(rand == 4){
+				stay();
+			}
+		}
+	}
+	
+	void pulseForward(){
+		Motor1A.pulse(500, PinState.HIGH, true);
+		Motor2A.pulse(500, PinState.HIGH, true);
+	}
+	
+	
+	void pulseBackward(){
+		Motor1B.pulse(500, PinState.HIGH, true);
+		Motor2B.pulse(500, PinState.HIGH, true);
+	}
+	
+	void pulseLeft(){
+		Motor1A.pulse(500, PinState.HIGH, true);
+		Motor2B.pulse(500, PinState.HIGH, true);
+	}
+	
+	void pulseRight(){
+		Motor1B.pulse(500, PinState.HIGH, true);
+		Motor2A.pulse(500, PinState.HIGH, true);
+	}
+	
+	void stay(){
+		Motor1B.pulse(500, PinState.LOW, true);
+		Motor2A.pulse(500, PinState.LOW, true);
+	}
+	
 	@Override
 	protected void atSimulationStart(AgentEvent event) {
 		super.atSimulationStart(event);
-		Log.v("motor_actuator", "A");
-		Motor1A.pulse(500, PinState.HIGH, true);
-		Log.v("motor_actuator", "B");
-
-		
-		
+		test();
 	}
 	
 	@Override
 	protected void atAgentStop(AgentEvent event) {
 		super.atAgentStop(event);
-		Log.v("___________________________________________", "??????????????????????????");
 		gpio.shutdown();
 	}
 	

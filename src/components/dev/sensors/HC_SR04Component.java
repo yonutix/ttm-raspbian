@@ -29,12 +29,11 @@ class EchoListener implements GpioPinListenerDigital{
 
 	@Override
 	public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
-		//Echo returned
-		Log.v("distance_sensor", "input listener called");
 		if(event.getState() == PinState.HIGH){
-			mclk.updateDistance(System.currentTimeMillis());
+			
 		}
 		else{
+			mclk.updateDistance(System.currentTimeMillis());
 			mclk.echoReceived();
 		}
 	}
@@ -43,6 +42,8 @@ class EchoListener implements GpioPinListenerDigital{
 
 class UpdateClock extends TimerTask implements Serializable {
 	
+	
+	static int x = 0;
 	long triggered;
 	
 	enum State {
@@ -64,7 +65,7 @@ class UpdateClock extends TimerTask implements Serializable {
 	
 	public void updateDistance(long received){
 		mParent.updateDistance(((double)(received - triggered))/1000 * 17150);
-		Log.v("update_distance", "" + (((double)(received - triggered))/1000 * 17150));
+		
 	}
 	
 	public void echoReceived(){
@@ -74,11 +75,10 @@ class UpdateClock extends TimerTask implements Serializable {
 	@Override
 	public void run() {
 		if (currentState == State.EMIT_START){
-			triggered = System.currentTimeMillis();
-			Log.v("distance_sensor", "emit start");
 			currentState = State.EMIT_END;
-			mParent.getTriggerPin().pulse(300, PinState.HIGH, false);
-			Log.v("distance_sensor", "emit end");
+			mParent.getTriggerPin().pulse(300, PinState.HIGH, true);
+			triggered = System.currentTimeMillis();
+			
 		}
 	}
 }
@@ -130,8 +130,8 @@ public class HC_SR04Component extends AgentComponent{
 		
 		gpio = GpioFactory.getInstance();
 		
-		triggerPin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_23, PinState.LOW);
-		echoPin    = gpio.provisionDigitalInputPin(RaspiPin.GPIO_24);
+		triggerPin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04);
+		echoPin    = gpio.provisionDigitalInputPin(RaspiPin.GPIO_05);
 		
 		echoPin.addListener(new EchoListener(updateClock));
 		

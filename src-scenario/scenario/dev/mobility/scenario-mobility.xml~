@@ -27,9 +27,6 @@
 				<scen:component name="control" />
 				<scen:component name="mobility" />
 				<scen:component name="messaging" />
-				<scen:component name="HC_SR04" />
-				<scen:component name="MMA8452Q" />
-				<scen:component name="FORCESENSOR" />
 				<scen:component name="MOTOR" />
 				<scen:component name="testing"
 					classpath="StateAgentTestComponent">
