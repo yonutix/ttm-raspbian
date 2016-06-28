@@ -1,7 +1,6 @@
 package components.dev.sensors;
 
 import java.io.Serializable;
-import java.nio.ByteBuffer;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -10,10 +9,10 @@ import com.pi4j.io.i2c.I2CDevice;
 import com.pi4j.io.i2c.I2CFactory;
 
 import Logging.Log;
-import components.dev.mobility.StateAgentTestComponent;
-import core.agent.AgentComponent;
-import core.agent.AgentEvent;
-import core.agent.CompositeAgent;
+import tatami.core.agent.AgentComponent;
+import tatami.core.agent.AgentComponent.AgentComponentName;
+import tatami.core.agent.AgentEvent;
+import tatami.core.agent.CompositeAgent;
 
 class PeriodicSample extends TimerTask implements Serializable {
 

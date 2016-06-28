@@ -3,8 +3,8 @@ package HMIBackend.backend;
 import java.util.HashMap;
 
 import Logging.Log;
-import core.simulation.external_interface.ExtAgentInfo;
-import core.simulation.external_interface.ExternalInterfaceListener;
+import tatami.simulation.external_interface.ExtAgentInfo;
+import tatami.simulation.external_interface.ExternalInterfaceListener;
 
 /**
  * Created by uidk9631 on 17.05.2016.

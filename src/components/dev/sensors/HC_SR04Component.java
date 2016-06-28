@@ -14,9 +14,10 @@ import com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent;
 import com.pi4j.io.gpio.event.GpioPinListenerDigital;
 
 import Logging.Log;
-import core.agent.AgentComponent;
-import core.agent.AgentEvent;
-import core.agent.CompositeAgent;
+import tatami.core.agent.AgentComponent;
+import tatami.core.agent.AgentComponent.AgentComponentName;
+import tatami.core.agent.AgentEvent;
+import tatami.core.agent.CompositeAgent;
 
 
 

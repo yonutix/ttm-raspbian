@@ -6,10 +6,10 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import Logging.Log;
-import core.agent.AgentComponent;
-import core.agent.AgentComponent.AgentComponentName;
-import core.agent.AgentEvent;
-import core.agent.CompositeAgent;
+import tatami.core.agent.AgentComponent;
+import tatami.core.agent.AgentComponent.AgentComponentName;
+import tatami.core.agent.AgentEvent;
+import tatami.core.agent.CompositeAgent;
 
 /**
  * 

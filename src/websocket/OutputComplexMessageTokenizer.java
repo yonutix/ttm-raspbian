@@ -1,6 +1,9 @@
 package websocket;
 
+import java.security.MessageDigest;
 import java.util.ArrayList;
+
+import Logging.Log;
 
 public class OutputComplexMessageTokenizer {
 
@@ -79,8 +82,7 @@ public class OutputComplexMessageTokenizer {
 			result[i] = bytes.get(i);
 		}
 		
-		System.out.println("Result::: " + sum);
-		
+		System.out.println("Result::: " + sum + " |" + result[result.length-1]);
 		
 		return result;
 		

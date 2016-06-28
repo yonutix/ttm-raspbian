@@ -9,9 +9,10 @@ import com.pi4j.io.gpio.PinState;
 import com.pi4j.io.gpio.RaspiPin;
 
 import Logging.Log;
-import core.agent.AgentComponent;
-import core.agent.AgentEvent;
-import core.agent.CompositeAgent;
+import tatami.core.agent.AgentComponent;
+import tatami.core.agent.AgentComponent.AgentComponentName;
+import tatami.core.agent.AgentEvent;
+import tatami.core.agent.CompositeAgent;
 
 public class MotorComponent extends AgentComponent{
 	

@@ -1,6 +1,6 @@
 package HMIBackend.backend;
 
-import core.simulation.RaspbianWrapperMain;
+import tatami.simulation.RaspbianWrapperMain;
 
 /**
  * Created by uidk9631 on 17.05.2016.

@@ -29,21 +29,19 @@ import org.java_websocket.WebSocketImpl;
 import org.java_websocket.drafts.Draft;
 import org.java_websocket.drafts.Draft_17;
 
-import com.pi4j.component.motor.Motor;
-
 import Logging.Log;
 import XML.XMLTree;
 import components.dev.actuators.MotorComponent;
 import components.dev.sensors.ForceSensorComponent;
 import components.dev.sensors.HC_SR04Component;
 import components.dev.sensors.MMA8452QComponent;
-import core.agent.AgentComponent;
-import core.agent.AgentEvent;
-import core.agent.CompositeAgent;
-import core.agent.mobility.MobilityComponent;
-import core.simulation.AgentManager;
-import core.simulation.BootSettingsManager;
-import core.simulation.PlatformLoader;
+import tatami.core.agent.AgentComponent;
+import tatami.core.agent.AgentEvent;
+import tatami.core.agent.CompositeAgent;
+import tatami.core.agent.mobility.MobilityComponent;
+import tatami.simulation.AgentManager;
+import tatami.simulation.BootSettingsManager;
+import tatami.simulation.PlatformLoader;
 
 /**
  * Implements a {@link PlatformLoader} instance that allows centralized communication via WebSockets.
@@ -283,6 +281,9 @@ public class WebSocketMessagingPlatform implements PlatformLoader, PlatformLoade
 			System.out.println(" ?!?!?!?!?!?!");
 
 			byte[] x = mAgentsbuffer.get(0).returnObj();
+			System.out.println(" ?!?!?!?!?!?!2");
+			
+			
 			System.out.println("x");
 			ByteArrayInputStream bis = new ByteArrayInputStream(x);
 			System.out.println("y");

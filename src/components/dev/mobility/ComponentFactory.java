@@ -5,11 +5,11 @@ import components.dev.actuators.MotorComponent;
 import components.dev.sensors.ForceSensorComponent;
 import components.dev.sensors.HC_SR04Component;
 import components.dev.sensors.MMA8452QComponent;
-import core.agent.AgentComponent;
-import core.agent.mobility.MobilityComponent;
-import core.agent.parametric.ParametricComponent;
-import core.control.ControlComponent;
-import core.simulation.PlatformLoader;
+import tatami.core.agent.AgentComponent;
+import tatami.core.agent.mobility.MobilityComponent;
+import tatami.core.agent.parametric.ParametricComponent;
+import tatami.core.control.ControlComponent;
+import tatami.simulation.PlatformLoader;
 import websocket.WebSocketMessagingComponent;
 import websocket.WebSocketMessagingPlatform;
 

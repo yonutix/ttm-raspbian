@@ -13,10 +13,10 @@ package websocket;
 
 
 import Logging.Log;
-import core.agent.AgentComponent;
-import core.agent.AgentEvent;
-import core.agent.messaging.MessagingComponent;
-import core.agent.messaging.NameBasedMessagingComponent;
+import tatami.core.agent.AgentComponent;
+import tatami.core.agent.AgentEvent;
+import tatami.core.agent.messaging.MessagingComponent;
+import tatami.core.agent.messaging.NameBasedMessagingComponent;
 
 /**
  * Agent component that allows communication via WebSockets, using the services provided by
